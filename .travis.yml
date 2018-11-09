@@ -6,7 +6,7 @@ python:
 notifications:
   email: false
 install:
-  - pip install -r test_requirements.txt
+  - pip install -r test_requirements.txt tests/requirements.txt
 stages:
   - test
   - moban
@@ -19,6 +19,8 @@ jobs:
         - git diff --exit-code
 
 stage: test
+script:
+  - py.test
 
 script:
   - find templates/ -type f -name '*.jj2' -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
