@@ -6,7 +6,8 @@ python:
 notifications:
   email: false
 install:
-  - pip install -r test_requirements.txt tests/requirements.txt
+  - pip install -r test_requirements.txt
+  - pip install -r tests/requirements.txt
 stages:
   - test
   - moban
