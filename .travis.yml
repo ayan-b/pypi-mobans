@@ -36,7 +36,6 @@ stages:
     # push to github
     - git config user.email "travis@travis-ci.org"
     - git config user.name "traviscibot"
-    - git branch -D moban
     - git checkout -b moban
     - git add .
     - git reset HEAD 0.0.4
