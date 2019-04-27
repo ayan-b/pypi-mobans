@@ -39,6 +39,8 @@ jobs:
   include:
     - *moban
     - *lint
+  allow_failures:
+    - test
 
 stage: test
 
