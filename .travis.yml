@@ -33,14 +33,7 @@ stages:
   install: pip install moban>=0.0.4
   script:
     - make
-    # push to github
-    - git config user.email "travis@travis-ci.org"
-    - git config user.name "traviscibot"
-    - git checkout -b moban
-    - git add .
-    - git reset HEAD 0.0.4
-    - git commit -m "Sync templates [skip ci]"
-    - git push https://ayan-b:${GITHUB_TOKEN}@github.com/ayan-b/pypi-mobans HEAD:moban -f
+    - make push	
 
 jobs:
   include:
